@@ -68,6 +68,7 @@ alias getip='curl "http://ip-api.com/json"'
 alias yayss='yay -Ss'
 alias clock='tclock clock -D'
 alias   cls='clear'
+alias    cd='z'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
@@ -85,3 +86,5 @@ export PATH=$PATH:/home/alvin/.cargo/bin
 
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
+
+eval "$(zoxide init zsh)"
