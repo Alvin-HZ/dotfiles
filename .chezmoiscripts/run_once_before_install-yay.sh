@@ -1,7 +1,5 @@
-{{ if (eq .chezmoi.osRelease.id "arch") -}}
 #!/bin/bash
 pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay.git
 cd yay
 makepkg -si
-{{ end -}}
