@@ -2,6 +2,9 @@ packages:
   arch:
     pacman:
     - 'git'
+    - 'unzip'
+    - 'npm'
+    - 'nodejs'
     - 'zsh'
     - 'eza'
     - 'starship'
@@ -12,3 +15,4 @@ packages:
     - 'ttf-space-mono-nerd'
     yay:
     - 'oh-my-zsh-git'
+    - 'zsh-fast-syntax-highlighting'
