@@ -1,12 +1,14 @@
 packages:
-  arch::
+  arch:
     pacman:
     - 'git'
+    - 'zsh'
     - 'eza'
     - 'starship'
     - 'zoxide'
-    - 'zsh'
     - 'github-cli'
     - 'neovim'
+    - 'ttf-jetbrains-mono-nerd'
+    - 'ttf-space-mono-nerd'
     yay:
     - 'oh-my-zsh-git'

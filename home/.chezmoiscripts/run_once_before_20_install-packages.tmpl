@@ -1,0 +1,15 @@
+{{ if (eq .chezmoi.osRelease.id "arch") -}}
+#!/bin/bash
+
+
+# pacman packages
+{{ range .packages.arch.pacman -}}
+sudo pacman -S --noconfirm {{ . | quote }}
+{{ end -}}
+
+# aur packages
+{{ range .packages.arch.yay -}}
+yay -S --noconfirm {{ . | quote }}
+{{ end -}}
+
+{{ end -}}
