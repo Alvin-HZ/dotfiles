@@ -7,6 +7,8 @@ source $ZSH/oh-my-zsh.sh
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
 
+ZSH_HIGHLIGHT_STYLES[comment]="bg=white,fg=black"
+
 # In case a command is not found, try to find the package that has it
 function command_not_found_handler {
     local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
@@ -62,6 +64,8 @@ alias clock='tclock clock -D'
 alias   cls='clear'
 alias    cd='z'
 
+bindkey '^Z' undo
+
 export PATH=/home/alvin/.local/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 export PATH=$PATH:/home/alvin/.cargo/bin
 
@@ -75,3 +79,5 @@ eval "$(starship init zsh)"
 if test -f ~/.config/zshrc.d/dots-hyprland.zsh; then
     source ~/.config/zshrc.d/dots-hyprland.zsh
 fi
+
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$USER_ID/bus
