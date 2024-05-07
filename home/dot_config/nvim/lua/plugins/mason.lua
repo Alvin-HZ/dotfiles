@@ -10,7 +10,7 @@ return {
         "json-lsp",
         "typescript-language-server",
         "eslint-lsp",
-        "eslint-d",
+        "eslint_d",
         "ast-grep",
         "harper-ls",
       },
