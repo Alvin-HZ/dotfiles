@@ -1,13 +1,16 @@
-ZSH=~/.config/oh-my-zsh/
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+[ ! -d $ZINIT_HOME ] && mkdir -p "$(dirname $ZINIT_HOME)"
+[ ! -d $ZINIT_HOME/.git ] && git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+source "${ZINIT_HOME}/zinit.zsh"
 
-# List of plugins used
-plugins=(git sudo zsh-256color zsh-autosuggestions zsh-syntax-highlighting)
-source $ZSH/oh-my-zsh.sh
 
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-
-ZSH_HIGHLIGHT_STYLES[comment]="bg=white,fg=black"
+zinit wait lucid for \
+    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+        zdharma-continuum/fast-syntax-highlighting \
+    blockf \
+        zsh-users/zsh-completions \
+    atload"!_zsh_autosuggest_start" \
+        zsh-users/zsh-autosuggestions
 
 # In case a command is not found, try to find the package that has it
 function command_not_found_handler {
@@ -32,6 +35,7 @@ function command_not_found_handler {
 # Helpful aliases
 alias     l='eza -lh  --icons=auto' # long list
 alias    ls='eza -1   --icons=auto' # short list
+alias    la='eza -1a   --icons=auto' # short list
 alias    ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias    ld='eza -lhD --icons=auto' # long list dirs
 alias   ccp='cliphist wipe'
