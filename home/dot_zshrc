@@ -29,34 +29,11 @@ function command_not_found_handler {
     return 127
 }
 
-# Detect the AUR wrapper
-if pacman -Qi yay &>/dev/null ; then
-   aurhelper="yay"
-elif pacman -Qi paru &>/dev/null ; then
-   aurhelper="paru"
-fi
-
-function in {
-    local pkg="$1"
-    if pacman -Si "$pkg" &>/dev/null ; then
-        sudo pacman -S "$pkg"
-    else 
-        "$aurhelper" -S "$pkg"
-    fi
-}
-
 # Helpful aliases
 alias     l='eza -lh  --icons=auto' # long list
 alias    ls='eza -1   --icons=auto' # short list
 alias    ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
 alias    ld='eza -lhD --icons=auto' # long list dirs
-alias    un='$aurhelper -Rns' # uninstall package
-alias    up='$aurhelper -Syu' # update system/package/aur
-alias    pl='$aurhelper -Qs' # list installed package
-alias    pa='$aurhelper -Ss' # list availabe package
-alias    pc='$aurhelper -Sc' # remove unused cache
-alias    po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias    vc='code --disable-gpu' # gui code editor
 alias   ccp='cliphist wipe'
 alias getip='curl "http://ip-api.com/json"'
 alias yayss='yay -Ss'
@@ -80,4 +57,4 @@ if test -f ~/.config/zshrc.d/dots-hyprland.zsh; then
     source ~/.config/zshrc.d/dots-hyprland.zsh
 fi
 
-export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/$USER_ID/bus
+export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
