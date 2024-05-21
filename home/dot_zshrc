@@ -4,13 +4,23 @@ ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
 
-zinit wait lucid for \
-    atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-        zdharma-continuum/fast-syntax-highlighting \
-    blockf \
-        zsh-users/zsh-completions \
-    atload"!_zsh_autosuggest_start" \
-        zsh-users/zsh-autosuggestions
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+
+autoload -Uz compinit && compinit
+
+HISTSIZE=5000
+HISTFILE=~/.zsh_history
+SAVEHIST=$HISTSIZE
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # In case a command is not found, try to find the package that has it
 function command_not_found_handler {
@@ -40,7 +50,6 @@ alias    ll='eza -lha --icons=auto --sort=name --group-directories-first' # long
 alias    ld='eza -lhD --icons=auto' # long list dirs
 alias   ccp='cliphist wipe'
 alias getip='curl "http://ip-api.com/json"'
-alias yayss='yay -Ss'
 alias clock='tclock clock -D'
 alias   cls='clear'
 alias    cd='z'
