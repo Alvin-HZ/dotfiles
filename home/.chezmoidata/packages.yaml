@@ -14,5 +14,3 @@ packages:
     - 'ttf-jetbrains-mono-nerd'
     - 'ttf-space-mono-nerd'
     - 'noto-fonts-emoji'
-    yay:
-    - 'oh-my-zsh-git'
