@@ -8,7 +8,15 @@ zinit light zsh-users/zsh-syntax-highlighting
 zinit light zsh-users/zsh-completions
 zinit light zsh-users/zsh-autosuggestions
 
+zi snippet OMZP::sudo
+zi snippet OMZP::command-not-found
+
 autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+
+bindkey '^[[A' history-search-backward
+bindkey '^[[B' history-search-forward
 
 HISTSIZE=5000
 HISTFILE=~/.zsh_history
@@ -22,25 +30,9 @@ setopt hist_save_no_dups
 setopt hist_ignore_dups
 setopt hist_find_no_dups
 
-# In case a command is not found, try to find the package that has it
-function command_not_found_handler {
-    local purple='\e[1;35m' bright='\e[0;1m' green='\e[1;32m' reset='\e[0m'
-    printf 'zsh: command not found: %s\n' "$1"
-    local entries=( ${(f)"$(/usr/bin/pacman -F --machinereadable -- "/usr/bin/$1")"} )
-    if (( ${#entries[@]} )) ; then
-        printf "${bright}$1${reset} may be found in the following packages:\n"
-        local pkg
-        for entry in "${entries[@]}" ; do
-            local fields=( ${(0)entry} )
-            if [[ "$pkg" != "${fields[2]}" ]] ; then
-                printf "${purple}%s/${bright}%s ${green}%s${reset}\n" "${fields[1]}" "${fields[2]}" "${fields[3]}"
-            fi
-            printf '    /%s\n' "${fields[4]}"
-            pkg="${fields[2]}"
-        done
-    fi
-    return 127
-}
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
+
 
 # Helpful aliases
 alias     l='eza -lh  --icons=auto' # long list
