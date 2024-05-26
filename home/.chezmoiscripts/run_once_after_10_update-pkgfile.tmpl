@@ -1,0 +1,4 @@
+{{ if (eq .chezmoi.osRelease.id "arch") -}}
+#!/bin/bash
+sudo pkgfile --update
+{{ end -}}
