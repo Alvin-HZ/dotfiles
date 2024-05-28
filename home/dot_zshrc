@@ -45,6 +45,13 @@ alias   cls='clear'
 alias    cd='z'
 
 bindkey '^Z' undo
+bindkey "\e[3~" delete-char
+bindkey "^H" backward-kill-word
+bindkey "^[[3;5~" kill-word
+bindkey "^[[1;5D" backward-word
+bindkey "^[[1;5C" forward-word
+
+
 
 export PATH=/home/alvin/.local/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 export PATH=$PATH:/home/alvin/.cargo/bin
