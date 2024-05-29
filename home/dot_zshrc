@@ -67,4 +67,8 @@ if test -f ~/.config/zshrc.d/dots-hyprland.zsh; then
     source ~/.config/zshrc.d/dots-hyprland.zsh
 fi
 
+if test -f ~/.device.zsh; then
+    source ~/.device.zsh
+fi
+
 export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
