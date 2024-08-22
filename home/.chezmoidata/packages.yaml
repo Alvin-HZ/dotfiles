@@ -11,4 +11,5 @@ packages:
     - 'starship'
     - 'zoxide'
     - 'neovim'
+    - 'yazi'
     yay:
