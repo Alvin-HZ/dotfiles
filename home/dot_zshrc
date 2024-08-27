@@ -51,7 +51,14 @@ bindkey "^[[3;5~" kill-word
 bindkey "^[[1;5D" backward-word
 bindkey "^[[1;5C" forward-word
 
-
+function yy() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	yazi "$@" --cwd-file="$tmp"
+	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+		builtin cd -- "$cwd"
+	fi
+	rm -f -- "$tmp"
+}
 
 export PATH=/home/alvin/.local/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 export PATH=$PATH:/home/alvin/.cargo/bin
@@ -72,3 +79,9 @@ if test -f ~/.device.zsh; then
 fi
 
 # export DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+
+## [Completion]
+## Completion scripts setup. Remove the following line to uninstall
+[[ -f /home/alvin/.dart-cli-completion/zsh-config.zsh ]] && . /home/alvin/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
+
