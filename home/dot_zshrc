@@ -43,6 +43,7 @@ alias    ld='eza -lhD --icons=auto' # long list dirs
 alias   ccp='cliphist wipe'
 alias   cls='clear'
 alias    cd='z'
+alias   zed='zeditor'
 
 bindkey '^Z' undo
 bindkey "\e[3~" delete-char
