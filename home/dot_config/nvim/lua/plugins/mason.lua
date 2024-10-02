@@ -12,7 +12,6 @@ return {
         "eslint-lsp",
         "eslint_d",
         "ast-grep",
-        "harper-ls",
       },
     },
   },
