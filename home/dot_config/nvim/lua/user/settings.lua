@@ -10,6 +10,6 @@ settings["use_ssh"] = false
 
 settings["colorscheme"] = "catppuccin"
 
-settings["transparent_background"] = true
+settings["transparent_background"] = false
 
 return settings
