@@ -35,15 +35,9 @@ zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 
 
 # Helpful aliases
-alias     l='eza -lh  --icons=auto' # long list
 alias    ls='eza -1   --icons=auto' # short list
-alias    la='eza -1a  --icons=auto' # short list
-alias    ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
-alias    ld='eza -lhD --icons=auto' # long list dirs
 alias   ccp='cliphist wipe'
-alias   cls='clear'
 alias    cd='z'
-alias   zed='zeditor'
 
 bindkey '^Z' undo
 bindkey "\e[3~" delete-char
@@ -61,12 +55,17 @@ function yy() {
 	rm -f -- "$tmp"
 }
 
-export PATH=/home/alvin/.local/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
-export PATH=$PATH:/home/alvin/.cargo/bin
+export PATH=/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
+export PATH=~/.local/bin:$PATH
+export PATH=$PATH:~/.cargo/bin
 
-
-export EDITOR="nvim"
-export SUDO_EDITOR="nvim"
+if [ -e "/home/$USER/.nix-profile/bin/nvim" ]; then
+  export EDITOR="/home/$USER/.nix-profile/bin/nvim"
+  export SUDO_EDITOR="/home/$USER/.nix-profile/bin/nvim"
+else
+  export EDITOR="nvim"
+  export SUDO_EDITOR="nvim"
+fi
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
@@ -86,3 +85,12 @@ fi
 [[ -f /home/alvin/.dart-cli-completion/zsh-config.zsh ]] && . /home/alvin/.dart-cli-completion/zsh-config.zsh || true
 ## [/Completion]
 
+
+if [ -e /home/alvin/.nix-profile/etc/profile.d/nix.sh ]; then . /home/alvin/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
+
+
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+  . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
