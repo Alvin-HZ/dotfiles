@@ -12,4 +12,7 @@ packages:
     - 'zoxide'
     - 'neovim'
     - 'yazi'
+    - 'tmux'
+    - 'skim'
+    - 'fd'
     yay:
