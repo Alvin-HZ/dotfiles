@@ -10,7 +10,7 @@ add_newline = false
 # $character
 # """
 format = """
-$cmd_duration$directory $git_branch
+$cmd_duration$directory $hostname $git_branch
 $character
 """
 
@@ -51,8 +51,8 @@ renamed = " ✍️ "
 deleted = " 🗑 "
 
 [hostname]
-ssh_only = false
-format =  "[•$hostname](bg:cyan bold fg:black)[](bold fg:cyan )"
+ssh_only = true
+format =  "[](bold fg:cyan)[•$hostname](bg:cyan bold fg:black)[](bold fg:cyan )"
 trim_at = ".companyname.com"
 disabled = false
 
