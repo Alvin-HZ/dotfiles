@@ -10,3 +10,10 @@ alias grep='grep --color=auto'
 PS1='[\u@\h \W]\$ '
 export PATH=/home/alvin/.local/bin:/sbin:/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/usr/sbin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl
 export PATH=$PATH:/home/alvin/.cargo/bin
+
+if ! pgrep -u "$USER" ssh-agent >/dev/null; then
+  ssh-agent -t 1h >"$XDG_RUNTIME_DIR/ssh-agent.env"
+fi
+if [[ ! -f "$SSH_AUTH_SOCK" ]]; then
+  source "$XDG_RUNTIME_DIR/ssh-agent.env" >/dev/null
+fi
