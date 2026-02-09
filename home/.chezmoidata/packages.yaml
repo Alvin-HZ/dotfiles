@@ -2,17 +2,12 @@ packages:
   arch:
     pacman:
     - 'git'
-    - 'unzip'
-    - 'npm'
-    - 'nodejs'
     - 'zsh'
     - 'eza'
-    - 'pkgfile'
     - 'starship'
     - 'zoxide'
     - 'neovim'
     - 'yazi'
     - 'tmux'
-    - 'skim'
     - 'fd'
     yay:
