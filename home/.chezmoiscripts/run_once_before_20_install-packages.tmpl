@@ -8,8 +8,8 @@ sudo pacman -S --noconfirm {{ . | quote }}
 {{ end -}}
 
 # aur packages
-{{ range .packages.arch.yay -}}
-yay -S --noconfirm {{ . | quote }}
-{{ end -}}
+#{{ range .packages.arch.aur -}}
+#yay -S --noconfirm {{ . | quote }}
+#{{ end -}}
 
 {{ end -}}
