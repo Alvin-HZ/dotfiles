@@ -1,7 +1,13 @@
 {{ if (eq .chezmoi.osRelease.id "arch") -}}
-#!/bin/bash
-#sudo pacman -S --needed git base-devel
-#git clone https://aur.archlinux.org/yay-bin.git
-#cd yay-bin
-#makepkg -si
+!/bin/bash
+sudo pacman -S --needed git base-devel
+{{ if eq "yay" .aur_helper }}
+git clone https://aur.archlinux.org/yay-bin.git
+cd yay-bin
+{{ end }}
+{{ if eq "paru" .aur_helper }}
+git clone https://aur.archlinux.org/paru.git
+cd paru
+{{ end }}
+makepkg -si
 {{ end -}}

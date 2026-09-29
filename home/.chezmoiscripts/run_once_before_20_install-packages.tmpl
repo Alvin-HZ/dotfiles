@@ -1,15 +1,25 @@
 {{ if (eq .chezmoi.osRelease.id "arch") -}}
-#!/bin/bash
-
+#!/usr/bin/env sh
 
 # pacman packages
-{{ range .packages.arch.pacman -}}
-sudo pacman -S --noconfirm {{ . | quote }}
-{{ end -}}
+sudo pacman -S {{ .packages.arch.pacman | quoteList | join " " }}
 
 # aur packages
-#{{ range .packages.arch.aur -}}
-#yay -S --noconfirm {{ . | quote }}
-#{{ end -}}
+
+{{ if eq "desktop" .type }}
+
+sudo pacman -S {{ .packages.arch.basic_desktop | quoteList | join " " }}
+sudo pacman -S {{ .packages.arch.school | quoteList | join " " }}
+sudo pacman -S {{ .packages.arch.dev | quoteList | join " " }}
+sudo pacman -S {{ .packages.arch.fonts | quoteList | join " " }}
+
+{{ if eq "yay" .aur_helper }}
+yay -S {{ .packages.arch.desktop.aur | quoteList | join " " }}
+{{ end }}
+{{ if eq "paru" .aur_helper }}
+paru -S {{ .packages.arch.desktop.aur | quoteList | join " " }}
+{{ end }}
+
+{{ end }}
 
 {{ end -}}

@@ -1,0 +1,7 @@
+[data]
+{{- $choices := list "yay" "paru" -}}
+{{- $hosttype := promptChoice "What AUR helper do you want to use?" $choices -}}
+    aur_helper = {{- $hosttype | quote -}}
+{{- $choices := list "desktop" "terminal" -}}
+{{- $hosttype := promptChoice "What type of host are you on" $choices -}}
+    type = {{- $hosttype | quote -}}

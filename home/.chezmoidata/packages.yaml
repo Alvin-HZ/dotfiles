@@ -10,4 +10,93 @@ packages:
     - 'yazi'
     - 'tmux'
     - 'fd'
+    - 'lazygit'
+    - 'man-db'
     aur:
+    desktop:
+      basic_desktop:
+        #desktop
+        - 'hyprland'
+        - 'noctalia'
+        - 'kitty'
+        - 'dolphin'
+        - 'brightnessctl'
+        - 'hyprsunset'
+        - 'hyprland-protocols'
+        - 'hyprland-qt-support'
+        #portals
+        - 'xdg-desktop-portal-gtk'
+        - 'xdg-desktop-portal-hyprland'
+        - 'xdg-desktop-portal-kde'
+        #bluetooth
+        - 'bluez'
+        - 'bluez-utils'
+        - 'bluedevil'
+        - 'btop'
+        - 'perl-file-mimeinfo'
+        #sound
+        - 'wireplumber'
+        - 'libpulse'
+        - 'gst-plugin-pipewire'
+        - 'pipewire'
+        - 'pipewire-alsa'
+        - 'pipewire-jack'
+        - 'pipewire-pulse'
+        - 'pavucontrol-qt'
+        - 'sof-firmware'
+        #network
+        - 'networkmanager'
+        - 'network-manager-applet'
+        - 'wpa_supplicant'
+        #secrets
+        - 'seahorse'
+        - 'gnome-keyring'
+        - 'kwalletmanager'
+        - 'kwallet-pam'
+        #utils
+        - 'nextcloud-client'
+        - 'gocryptfs'
+        - 'plasma-vault'
+        - 'power-profiles-daemon'
+        - 'ufw'
+        - 'qalculate-gtk'
+        - 'ark'
+        - 'partitionmanager'
+        #printing
+        - 'cups'
+        - 'cups-pk-helper'
+        - 'system-config-printer'
+        #system
+        - 'plymouth'
+        - 'sddm'
+        - 'sbctl'
+        - 'mkinitcpio'
+        - 'efibootmgr'
+        - 'expac'
+        - 'openssh'
+        #iphone connection
+        - 'usbmuxd'
+        #btrfs
+        - 'btrfs-assistant'
+        - 'btrfs-progs'
+        - 'snapper'
+
+
+
+      aur:
+        - 'betterbird-bin'
+        - 'vesktop-bin'
+        - 'brave-bin'
+        - 'localsend-bin'
+        - 'qt6ct-kde'
+
+      school:
+        - 'obsidian'
+        - 'xournalpp'
+
+      dev:
+        - 'zed'
+
+      fonts:
+        - 'noto-fonts-cjk'
+        - 'noto-fonts-emoji'
