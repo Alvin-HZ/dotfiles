@@ -1,0 +1,14 @@
+[audio]
+enable_overdrive = true
+
+[battery]
+warning_threshold = 10
+
+[location]
+address = "Waterloo, Canada"
+
+[osd.kinds]
+media = false
+
+[system.monitor]
+network_poll_seconds = 0

@@ -1,0 +1,21 @@
+[plugins]
+auto_update = "all"
+enabled = [ "user/hyprsunset-brightness", "alexander/screen-toolkit", "user/grouped-workspaces", "yocraft/battery-widget" ]
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/official-plugins"
+    name = "official"
+
+    [[plugins.source]]
+    kind = "git"
+    location = "https://github.com/noctalia-dev/community-plugins"
+    name = "community"
+
+    [[plugins.source]]
+    kind = "path"
+    location = "~/Projects/Noctalia-Plugins/"
+    name = "Custom-Plugins"
+
+[plugin_settings."user/hyprsunset-brightness"]
+min_brightness = 0

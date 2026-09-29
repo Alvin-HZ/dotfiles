@@ -1,0 +1,109 @@
+[bar.default]
+capsule = true
+center = [ "group:g3", "workspaces-grouped", "workspaces", "clock", "battery", "power_profile", "weather" ]
+end = [ "tray", "spacer_2", "group:g1", "group:g2", "group:g5" ]
+margin_ends = 0
+radius = 18
+shadow = false
+start = [ "group:g4", "active_window", "media" ]
+
+    [[bar.default.capsule_group]]
+    border = ""
+    enabled = true
+    fill = "surface_variant"
+    id = "g1"
+    members = [ "notifications", "clipboard", "network", "bluetooth" ]
+    opacity = 1.0
+    padding = 1.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g2"
+    members = [ "volume", "brightness" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g3"
+    members = [ "cpu", "ram" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g4"
+    members = [ "launcher", "wallpaper", "theme_mode" ]
+    opacity = 1.0
+    padding = 6.0
+
+    [[bar.default.capsule_group]]
+    enabled = true
+    fill = "surface_variant"
+    id = "g5"
+    members = [ "control-center", "session" ]
+    opacity = 1.0
+    padding = 6.0
+
+[widget.active_window]
+capsule = true
+max_length = 160
+min_length = 160
+title_scroll = "on_hover"
+
+[widget.battery]
+capsule = true
+
+[widget.brightness]
+enabled = false
+
+[widget.clock]
+capsule = true
+format = "{:%a, %m/%d} {:%H:%M}"
+
+[widget.launcher]
+capsule = true
+
+[widget.media]
+capsule = true
+hide_when_no_media = true
+title_scroll = "on_hover"
+
+[widget.network]
+show_label = false
+
+[widget.power_profile]
+capsule = true
+
+[widget.spacer_2]
+length = 25
+type = "spacer"
+
+[widget.taskbar]
+group_by_workspace = true
+group_single_icon_per_app = true
+
+[widget.tray]
+capsule = true
+
+[widget.wallpaper]
+capsule = true
+
+[widget.weather]
+capsule = true
+
+[widget.workspaces]
+active_pill_size = 1.5
+anchor = true
+capsule = true
+empty_color = "surface"
+enabled = false
+occupied_color = "outline"
+
+[widget.workspaces-grouped]
+anchor = true
+occupied_color = "on_secondary"
+type = "user/grouped-workspaces:workspaces-grouped"

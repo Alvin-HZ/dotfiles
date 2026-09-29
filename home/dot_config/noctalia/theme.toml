@@ -1,0 +1,36 @@
+[theme]
+builtin = "Gruvbox"
+community_palette = "ADW"
+mode = "auto"
+source = "wallpaper"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "gtk3", "gtk4", "kcolorscheme", "kitty", "qt" ]
+    community_ids = [ "feishin", "zed" ]
+
+        [theme.templates.user.terminal-sequences]
+        input_path = "~/.config/noctalia/templates/terminal-sequences"
+        output_path = "~/.cache/terminal-sequences"
+        post_hook = "tee /dev/pts/[0-9]* < ~/.cache/terminal-sequences"
+
+[wallpaper.default]
+path = "/home/alvin/Pictures/Wallpapers/cloudy_crescent.png"
+
+[wallpaper.last]
+path = "/home/alvin/Pictures/Wallpapers/cloudy_crescent.png"
+
+[wallpaper.monitors.DP-1]
+path = "/home/alvin/Pictures/Wallpapers/landscape-nature.jpg"
+
+[wallpaper.monitors.eDP-1]
+path = "/home/alvin/Pictures/Wallpapers/cloudy_crescent.png"
+
+[[wallpaper.favorite]]
+palette_source = "wallpaper"
+path = "/home/alvin/Pictures/Wallpapers/landscape-nature.jpg"
+theme_mode = "auto"
+wallpaper_scheme = "m3-content"
+
+[[wallpaper.favorite]]
+path = "/home/alvin/Pictures/Wallpapers/cloudy_crescent.png"
+theme_mode = "auto"
