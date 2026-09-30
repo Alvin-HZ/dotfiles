@@ -62,6 +62,9 @@ packages:
         - 'qalculate-gtk'
         - 'ark'
         - 'partitionmanager'
+        - 'zathura '
+        - 'zathura-pdf-mupdf '
+        - 'tesseract-data-eng'
         #printing
         - 'cups'
         - 'cups-pk-helper'
